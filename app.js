@@ -35,7 +35,7 @@ var bcSdk = require('./src/blockchain/blockchain_sdk.js');
 
 var cloudantKvStore;
 
-const port 	   = process.env.PORT || 3001;
+const port 	   = process.env.PORT || 3010;
 
 app.use(bodyParser.json());
 app.use(loggerpac('dev'));

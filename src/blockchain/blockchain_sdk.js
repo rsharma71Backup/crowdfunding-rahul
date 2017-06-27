@@ -56,16 +56,7 @@ function UserRegisteration(params) {
             }
             //here in function name we use the actual function name which is used for registeration i.e User_register
             console.log("value recieved insdk" + JSON.stringify(UserDetails))
-            var reqSpec = getRequestSpec({functionName: 'registerUser',args: ["Individual",UserDetails.name,UserDetails.email,UserDetails.phone,UserDetails.password,
-            UserDetails.re_password,
-            UserDetails.doc_type,
-            UserDetails.facebook,
-            UserDetails.blog,
-            UserDetails.website_url,
-            UserDetails.youtube,
-            UserDetails.org,
-            UserDetails.designation]});
-            
+            var reqSpec = getRequestSpec({functionName: 'registerUser',args: [UserDetails.usertype,UserDetails.name,UserDetails.email,UserDetails.phone,UserDetails.password,UserDetails.repassword,UserDetails.doctype,UserDetails.facebook,UserDetails.blog,UserDetails.websiteurl,UserDetails.youtube,UserDetails.org,UserDetails.designation]});
             recursiveInvoke({requestSpec: reqSpec, user: user})
             .then(function(resp){
                 logHelper.logMessage(logger, 'UserRegisteration', 'Successfully registered user', resp.body);
@@ -841,7 +832,7 @@ function UserRegisteration(params) {
             }
             //here in function name we use the actual function name which is used for registeration i.e User_register
 //args: [UserDetails.name,UserDetails.email,UserDetails.phone,UserDetails.pan,UserDetails.aadhar,UserDetails.usertype,UserDetails.upi,UserDetails.passpin]})
-            var reqSpec = getRequestSpec({functionName: 'registerUser',args: [UserDetails.id,UserDetails.name,UserDetails.email,UserDetails.phone,UserDetails.pan,UserDetails.aadhar,UserDetails.usertype,UserDetails.upi,UserDetails.passpin]});
+            var reqSpec = getRequestSpec({functionName: 'registerUser',args: [UserDetails.usertype,UserDetails.name,UserDetails.email,UserDetails.phone,UserDetails.password,UserDetails.repassword,UserDetails.doctype,UserDetails.facebook,UserDetails.blog,UserDetails.websiteurl,UserDetails.youtube,UserDetails.org,UserDetails.designation]});
             recursiveInvoke({requestSpec: reqSpec, user: user})
             .then(function(resp){
                 logHelper.logMessage(logger, 'UserRegisteration', 'Successfully registered user', resp.body);

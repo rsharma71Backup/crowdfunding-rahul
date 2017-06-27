@@ -61,44 +61,44 @@ module.exports = router => {
 	router.post('/registerUser', (req, res) => {
       //  const id = Math.floor(Math.random() * (100000 - 1)) + 1;
 	   // const id = "212121";
-	   const user_type = req.body.user_type;
-	
+	   const usertype = req.body.usertype;
+	console.log("data in usertype:"+usertype);
 		const name = req.body.name;
-	
+	console.log("data in name:"+name);
 		const email = req.body.email;
-		
+	console.log("data in email:"+email);
 	    const phone = req.body.phone;
-	
+	console.log("data in phone:"+phone);
 		const password = req.body.password;
-
-		const re_password = req.body.re_password;
-	
-	    const doc_type = req.body.doc_type;
-		
+    console.log("data in password:"+password);
+		const repassword = req.body.repassword;
+	console.log("data in repassword:"+repassword);
+	    const doctype = req.body.doctype;
+	console.log("data in doctype:"+doctype);
 		const facebook = req.body.facebook;
-
+    console.log("data in facebook:"+facebook);
 		const blog =req.body.blog;
-
-		const website_url = req.body.website_url;
-
+    console.log("data in blog:"+blog);
+		const websiteurl = req.body.websiteurl;
+    console.log("data in websiteurl:"+websiteurl);
 		const youtube = req.body.youtube;
-	
+	console.log("data in youtube:"+youtube);
 		const org = req.body.org;
-		
+	console.log("data in org:"+org);
 		const designation = req.body.designation;
-	
+	console.log("data in designation:"+designation);
 	
         		
 			
     
-		if (!user_type||!name||!email||!phone||!password||!re_password||!doc_type||!facebook||!blog||!website_url||!youtube||!org||!designation||!user_type.trim()||!name.trim()||!email.trim() ||!phone.trim() ||!password.trim() ||!re_password.trim()||!doc_type.trim()||!facebook.trim()||!blog.trim()||!website_url.trim()||!youtube.trim()||!org.trim()||!designation.trim()) {
+		if (!usertype||!name||!email||!phone||!password||!repassword||!doctype||!facebook||!blog||!websiteurl||!youtube||!org||!designation ||!usertype.trim()||!name.trim()||!email.trim()||!phone.trim()||!password.trim()||!repassword.trim()||!doctype.trim()||!facebook.trim()||!blog.trim()||!websiteurl.trim()||!youtube.trim()||!org.trim()||!designation.trim() ) {
              //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
 			res.status(400).json({message: 'Invalid Request !'});
 
 		} else {
 			console.log("register object"+ register)
 			
-			register.registerUser(user_type,name,email,phone,password,re_password,doc_type,facebook,blog,website_url,youtube,org,designation)
+			register.registerUser(usertype,name,email,phone,password,repassword,doctype,facebook,blog,websiteurl,youtube,org,designation)
 			.then(result => {
 
 			//	res.setHeader('Location', '/registerUser/'+email);
@@ -109,7 +109,7 @@ module.exports = router => {
 		}
 	});
 
-	router.post('/createCampaign', (req, res) => {
+	router.post('/createCampaign', (req, res) => { 
           const  status = req.body.status;
 		  const campaign_id = req.body.campaign_id;
 		  const user_id=req.body.user_id;

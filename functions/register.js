@@ -6,21 +6,21 @@ var bcSdk = require('../src/blockchain/blockchain_sdk');
 var user = 'risabh.s';
 var affiliation = 'fundraiser';
 //exports is used here so that registerUser can be exposed for router and blockchainSdk file
-exports.registerUser = (user_type,name,email,phone,password,re_password,doc_type,facebook,blog,website_url,youtube,org,designation)=>
+exports.registerUser = (usertype,name,email,phone,password,repassword,doctype,facebook,blog,websiteurl,youtube,org,designation)=>
 new Promise((resolve,reject) => {
 	
 
 	const newUser =({
-         user_type:user_type,
+         usertype:usertype,
 		 name:name,
 		 email:email,
 		 phone:phone,
 		 password:password,
-		 re_password:re_password,
-		 doc_type: doc_type,
+		 repassword:repassword,
+		 doctype: doctype,
 		 facebook:facebook,
 		 blog:blog,
-		 website_url:website_url,
+		 websiteurl:websiteurl,
 		 youtube:youtube,
 		 org:org,
 		 designation:designation
